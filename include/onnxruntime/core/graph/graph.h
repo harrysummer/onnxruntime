@@ -62,7 +62,7 @@ class Node {
     /** Construct a control edge.
     @param node The node the edge joins to the current node.
     */
-    EdgeEnd(const Node& node) noexcept;
+    explicit EdgeEnd(const Node& node) noexcept;
 
     /** Gets the Node that this EdgeEnd refers to. */
     const Node& GetNode() const noexcept;
@@ -183,7 +183,7 @@ class Node {
   Class to provide const access to Node instances iterated via an EdgeConstIterator. */
   class NodeConstIterator {
    public:
-    NodeConstIterator(EdgeConstIterator p_iter);
+    NodeConstIterator(EdgeConstIterator p_iter);  //NOLINT
 
     bool operator==(const NodeConstIterator& p_other) const;
 
@@ -201,14 +201,14 @@ class Node {
   // Functions defined to traverse a Graph as below.
 
   /** Gets an iterator to the beginning of the input nodes to this Node. */
-  NodeConstIterator InputNodesBegin() const noexcept { return NodeConstIterator(relationships_.input_edges.cbegin()); };
+  NodeConstIterator InputNodesBegin() const noexcept { return {relationships_.input_edges.cbegin()}; };
   /** Gets an iterator to the end of the input nodes to this Node. */
-  NodeConstIterator InputNodesEnd() const noexcept { return NodeConstIterator(relationships_.input_edges.cend()); }
+  NodeConstIterator InputNodesEnd() const noexcept { return {relationships_.input_edges.cend()}; }
 
   /** Gets an iterator to the beginning of the output nodes from this Node. */
-  NodeConstIterator OutputNodesBegin() const noexcept { return NodeConstIterator(relationships_.output_edges.cbegin()); }
+  NodeConstIterator OutputNodesBegin() const noexcept { return {relationships_.output_edges.cbegin()}; }
   /** Gets an iterator to the end of the output nodes from this Node. */
-  NodeConstIterator OutputNodesEnd() const noexcept { return NodeConstIterator(relationships_.output_edges.cend()); }
+  NodeConstIterator OutputNodesEnd() const noexcept { return {relationships_.output_edges.cend()}; }
 
   /** Gets an iterator to the beginning of the input edges to this Node.
   @remarks There are no nullptr entries in this collection. */
