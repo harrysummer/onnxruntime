@@ -34,8 +34,8 @@ else
   #Install ONNX
   #5af210ca8a1c73aa6bae8754c9346ec54d0a756e is v1.2.3
   #bae6333e149a59a3faa9c4d9c44974373dcf5256 is v1.3.0
-  #0a7cc483eb0c34e15414437bbbb420f52df4d8c2 is v1.3.0 latest
-  for onnx_version in "5af210ca8a1c73aa6bae8754c9346ec54d0a756e" "bae6333e149a59a3faa9c4d9c44974373dcf5256" "0a7cc483eb0c34e15414437bbbb420f52df4d8c2"; do
+  #84a0441ae28795a928005863dc142bee81827566 is v1.3.0 latest
+  for onnx_version in "5af210ca8a1c73aa6bae8754c9346ec54d0a756e" "bae6333e149a59a3faa9c4d9c44974373dcf5256" "84a0441ae28795a928005863dc142bee81827566"; do
     if [ -z ${lastest_onnx_version+x} ]; then
       echo "first pass";
     else
