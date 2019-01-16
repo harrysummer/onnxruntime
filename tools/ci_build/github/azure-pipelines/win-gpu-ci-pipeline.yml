@@ -121,5 +121,5 @@ jobs:
         searchFolder: '$(Build.BinariesDirectory)'
         testRunTitle: 'Unit Test Run'
       condition: succeededOrFailed()
-    - template: templates/clean-agent-build-directory-step.yml
+
 
